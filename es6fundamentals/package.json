@@ -1,0 +1,17 @@
+{
+  "name": "es6fundamentals",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test-init": "jasmine init",
+    "test": "jasmine --stop-on-failure=true --reporter=jasmine-ts-console-reporter"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^3.5.0",
+    "jasmine-ts-console-reporter": "^3.1.1"
+  }
+}
