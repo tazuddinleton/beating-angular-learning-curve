@@ -27,6 +27,7 @@ describe("getters and setters", () => {
 
         expect(setNameToEmpty).toThrow(new Error("Name cannot be empty."));
 
-       
+        p.name = "Taz Uddin";
+        expect(p.name).toBe("Mr. Taz Uddin");
     });
 })
