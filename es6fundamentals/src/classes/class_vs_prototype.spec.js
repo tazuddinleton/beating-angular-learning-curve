@@ -45,8 +45,7 @@ describe("class and prototype", () => {
 
         class Employee extends Person{
             constructor(name, department){
-                super();
-                this.name = name;
+                super(name);                
                 this.department = department;
             }
             getDepartment(){
