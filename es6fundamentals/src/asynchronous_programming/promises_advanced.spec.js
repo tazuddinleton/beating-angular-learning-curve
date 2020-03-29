@@ -56,7 +56,7 @@ describe("advanced promises", () => {
             {id: 1, name: "best es6 course"},
             {id: 2, name: "best c# course"},
             {id: 3, name: "best graphic design course"}
-        ]
+        ];
 
         courseIds.forEach(id => promises.push(getCourse(id)));
 
