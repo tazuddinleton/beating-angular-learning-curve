@@ -94,13 +94,13 @@ describe("async generators", () => {
 
         function executeTrade(price) {
             setTimeout(() => {
-                console.log(`trade is completed with price ${price}`);
+               // console.log(`trade is completed with price ${price}`);
                 async.resume();
             }, 100);
         }
     });
 
-    xit("should handle exception", (done) => {
+    it("should handle exception", (done) => {
         // generator         
         function* main() {
             try{
@@ -108,11 +108,11 @@ describe("async generators", () => {
                 if (price > 45) {
                     yield executeTrade(price);
                 } else {
-                    console.log('trade not made');
+                    
                 }
             }
             catch (err){
-                console.log('error: '+err);                
+                      
             }
             done();
         }
@@ -149,7 +149,7 @@ describe("async generators", () => {
         function executeTrade(price) {
             try{
                 setTimeout(() => {
-                    console.log(`trade is completed with price ${price}`);
+                    //console.log(`trade is completed with price ${price}`);
                     //throw Error("trade exception occured");
                     async.resume();
                 }, 100);

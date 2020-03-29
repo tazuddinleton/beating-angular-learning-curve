@@ -6,7 +6,7 @@ describe("async generators with promises", () => {
                 if (price > 45) {
                     yield executeTrade(price);
                 } else {
-                    console.log('trade not made');
+                    
                 }
             }
             catch (err) {
@@ -55,8 +55,8 @@ describe("async generators with promises", () => {
             let promise = new Promise((resolve, reject) => {
                 setTimeout(() => {
                     try {
-                        console.log(`trade is completed using promise with price ${price}`);                        
-                        resolve();
+                        
+                        resolve(`trade is completed using promise with price ${price}`);
                     }
                     catch (ex) {
                         reject(ex)
