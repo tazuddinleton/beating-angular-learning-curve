@@ -10,7 +10,7 @@ describe("async generators with promises", () => {
                 }
             }
             catch (err) {
-                console.log('error: ' + err);
+                // handle error
             }
             done();
         }
@@ -21,10 +21,12 @@ describe("async generators with promises", () => {
 
             }
             run() {
-                let process = (result) => {                          
-                    if(!result.done){                            
+                let process = (result) => {
+                    if (!result.done) {
                         result.value.then((data) => {
                             process(this.sequence.next(data));
+                        }).catch((err) => {
+                            process(this.sequence.throw(err));
                         });
                     }
                 }
@@ -37,31 +39,30 @@ describe("async generators with promises", () => {
 
         function getStockPrice() {
             let promise = new Promise((resolve, reject) => {
-                try {
-                    setTimeout(() => {
+                setTimeout(() => {
+                    try {
                         resolve(100);
-                    }, 100);
-                }
-                catch (err) {
-                    reject(err);
-                }
-            });            
+                    }
+                    catch (ex) {
+                        reject(ex);
+                    }
+                }, 100);
+            });
             return promise;
         }
 
         function executeTrade(price) {
             let promise = new Promise((resolve, reject) => {
-                try {
-                    setTimeout(() => {
-                        console.log(`trade is completed using promise with price ${price}`);
-                        //throw Error("trade exception occured");
+                setTimeout(() => {
+                    try {
+                        console.log(`trade is completed using promise with price ${price}`);                        
                         resolve();
-                    }, 100);
-                }
-                catch (err) {
-                    reject(err);
-                }
-            });            
+                    }
+                    catch (ex) {
+                        reject(ex)
+                    }
+                }, 100);
+            });
             return promise;
         }
     });
