@@ -1,12 +1,22 @@
 
+// Javascript module patterns
+/**
+ * IIFE Module Pattern
+ * Revealing Module Pattern
+ *      Signleton
+ *      Constructor Function
+ *        
+ * 
+ */
+
 (function(){
     console.log('hello world');
     console.log('Starting MultiMath with an IIFE');
     
     document.getElementById('startGame')
-    .addEventListener('click', function()
+    .addEventListener('click', function(){
         player.setName(document.getElementById('playername').value);
-        game.printGame();
+        game.printGame();        
     });
 
     document.getElementById('calculate')
