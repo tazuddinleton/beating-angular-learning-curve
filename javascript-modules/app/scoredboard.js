@@ -12,7 +12,7 @@ var scoreboard = function(){
             var result = results[index];
             output += '<h4>';
             output += result.name + ': ' + result.score + '/'
-            + result.problems + ' for factor ';
+            + result.problems + ' for factor '+ result.factor;
             output += '</h4>';
         }
         var scoreElement = document.getElementById('scores');

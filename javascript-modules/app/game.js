@@ -5,16 +5,24 @@ var game = function () {
         player.logPlayer();
 
         setProblemCount(document.getElementById('problemCount').value);
+
+
+
         var gameForm = '';
 
-        for (var i = 1; i < problemsPerGame; i++) {
-            gameForm += '<div class ="form-control">';
-            gameForm += '<label for="answer' + i + 'class="col-sm-2 control-label">';
-
-            gameForm += factorElement.value + ' x ' + i + ' = </label>';
-            gameForm += '<div class="col-sm-1"><input type="text" class="form-control" id="answer" /></div>';
-            gameForm += '</div>';
+        for (var i = 1; i <= problemsPerGame; i++) {
+            gameForm +=
+            `
+            <div class="form-group">
+            <label for="answer${i}" class="col-sm-2 control-label">${factorElement.value} x ${i}</label>
+            <div class="col-sm-1">
+                <input type="text" class="form-control" id="answer${i}" />
+            </div>
+            </div>    
+            `    
         }
+
+        
 
         var gameElement = document.getElementById('game');
         gameElement.innerHTML = gameForm;
@@ -26,8 +34,9 @@ var game = function () {
         var problemsInGame = getProblemCount();
         var score = 0;
 
-        for(var i = 0; i <= problemsInGame; i++){
-            var answer = document.getElementById('answer').value;
+        for(var i = 1; i <= problemsInGame; i++){
+            var answer = document.getElementById('answer'+i).value;
+            console.log(answer);
             if(i*factorElement.value == answer){
                 score++;
             }
