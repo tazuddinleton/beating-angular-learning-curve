@@ -1,4 +1,5 @@
-var scoreboard = function(){
+var Scoreboard = function(){
+    console.log('Creating new scoreboard object using constructor...');
     var results = [];
     
     function addResult(newResult){
@@ -22,4 +23,4 @@ var scoreboard = function(){
         addResult: addResult,
         updateScoreboard: updateScoreboard
     }
-}();
+};
