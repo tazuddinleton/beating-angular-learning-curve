@@ -1,0 +1,28 @@
+{
+  "name": "javascript-modules",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp clean && gulp && lite-server",
+    "clean": "gulp clean"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-modules-amd": "^7.9.0",
+    "@babel/plugin-transform-modules-systemjs": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "lite-server": "^2.5.4"
+  },
+  "dependencies": {
+    "requirejs": "^2.3.6",
+    "systemjs": "^0.19.47"
+  }
+}
