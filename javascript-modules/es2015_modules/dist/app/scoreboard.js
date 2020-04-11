@@ -4,7 +4,7 @@ define(["exports"], function (_exports) {
   Object.defineProperty(_exports, "__esModule", {
     value: true
   });
-  _exports.default = void 0;
+  _exports.Scoreboard = void 0;
 
   class Scoreboard {
     constructor() {
@@ -31,6 +31,5 @@ define(["exports"], function (_exports) {
 
   }
 
-  var _default = Scoreboard;
-  _exports.default = _default;
+  _exports.Scoreboard = Scoreboard;
 });

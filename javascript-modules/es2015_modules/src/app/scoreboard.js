@@ -1,4 +1,4 @@
-class Scoreboard{
+export class Scoreboard{
     
     constructor(){        
         this.results = [];
@@ -23,4 +23,3 @@ class Scoreboard{
 
 }
 
-export default Scoreboard;
