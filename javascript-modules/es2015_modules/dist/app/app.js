@@ -14,11 +14,11 @@ define(["./player", "./game"], function (_player, _game) {
   console.log('hello world');
   console.log('Starting MultiMath with an IIFE');
   document.getElementById('startGame').addEventListener('click', function () {
-    player.setName(document.getElementById('playername').value);
-    game.printGame();
+    (0, _player.setName)(document.getElementById('playername').value);
+    (0, _game.printGame)();
   });
   document.getElementById('calculate').addEventListener('click', function () {
-    game.calculateScore();
+    (0, _game.calculateScore)();
   });
-  document.getElementById('problemCount').value = game.getProblemCount();
+  document.getElementById('problemCount').value = (0, _game.getProblemCount)();
 });

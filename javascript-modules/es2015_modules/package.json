@@ -17,6 +17,7 @@
     "@babel/preset-es2015": "^7.0.0-beta.53",
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "lite-server": "^2.5.4"

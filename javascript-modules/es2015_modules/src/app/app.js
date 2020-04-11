@@ -18,13 +18,13 @@ console.log('Starting MultiMath with an IIFE');
 
 document.getElementById('startGame')
 .addEventListener('click', function(){
-    player.setName(document.getElementById('playername').value);
-    game.printGame();        
+    setName(document.getElementById('playername').value);
+    printGame();        
 });
 
 document.getElementById('calculate')
 .addEventListener('click', function(){
-    game.calculateScore();
+    calculateScore();
 });
 
-document.getElementById('problemCount').value = game.getProblemCount();
+document.getElementById('problemCount').value = getProblemCount();
