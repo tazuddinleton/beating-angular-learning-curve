@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "typescript",
+			"tsconfig": "/typescript-in-depth/library-manager/tsconfig.json",
+			"problemMatcher":["$tsc"],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			
+		}
+	]
+}
