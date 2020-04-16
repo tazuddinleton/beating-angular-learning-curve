@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class Books {
-    constructor(books) {
-        this.books = books;
+    constructor() {
+        this.books = new Array();
     }
     *[Symbol.iterator]() {
         for (let book of this.books) {
@@ -11,6 +11,17 @@ class Books {
     }
     add(book) {
         this.books.push(book);
+    }
+    findById(id) {
+        return this.books.find((book) => book.id === id);
+    }
+    findByCategory(category) {
+        return this.books.filter((book) => book.category === category);
+    }
+    findByAuthor(author) {
+        return this.books.filter(book => book.author.includes(author));
+    }
+    filter() {
     }
 }
 exports.Books = Books;

@@ -1,21 +1,17 @@
-import { Book } from "./book";
+import { Book, Category } from "./book";
 import {Books} from './books';
 
 
-let bookList = new Books([
-    new Book("book1", "author 1"),
-    new Book("book2", "author 2"),
-]);
+let bookList = new Books();
 
-let newBook = new Book("book3", "author 1");
-newBook.isAvailable
-
-bookList.add(newBook);
-
-
+bookList.add(new Book(1,"book3", "author 1", true, Category.Drama));
+bookList.add(new Book(2, "book4", "author 1", true, Category.Novel));
 
 for(let book of bookList){
     console.log(book.title);
+    console.log(book.category);
+    console.log(Category[book.category]);    
 }
+
 
 
