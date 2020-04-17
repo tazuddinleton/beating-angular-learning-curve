@@ -1,14 +1,12 @@
-
-export class Logger{
+export class Logger {
     public logMsg: (msg: string, date?: Date, ...more: any) => string;
-    constructor(){     
-        this.logMsg = (msg: string)=> {
+    constructor() {
+        this.logMsg = (msg: string) => {
             console.log(msg);
             return msg;
-        }
-    }   
+        };
+    }
 }
-
 
 let logWithRest = new Logger();
 logWithRest.logMsg = (msg: string, date?: Date, ...more: any[]) => {
@@ -19,7 +17,6 @@ logWithRest.logMsg = (msg: string, date?: Date, ...more: any[]) => {
     return msg;
 };
 
-
-logWithRest.logMsg("hello world", new Date(), 1, 2, 3, {key: 'value'});
+logWithRest.logMsg("hello world", new Date(), 1, 2, 3, { key: "value" });
 
 console.log();

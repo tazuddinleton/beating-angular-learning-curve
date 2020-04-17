@@ -1,15 +1,15 @@
 export class Person {
-  private _email: string;
-  constructor(public name: string, public age: number ) {
-    this._email = "";
-  }
-  get email(): string {
-    return this._email;
-  }
+    private _email: string;
+    constructor(public name: string, public age: number) {
+        this._email = "";
+    }
+    get email(): string {
+        return this._email;
+    }
 
-  set email(name: string) {    
-    this._email = name;
-  }
+    set email(name: string) {
+        this._email = name;
+    }
 }
 
 let p1 = new Person("Taz Uddin", 30);

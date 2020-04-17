@@ -1,26 +1,25 @@
-
-function logEnglish(msg: string): string{
-    console.log('Now logging in english...');
+function logEnglish(msg: string): string {
+    console.log("Now logging in english...");
     console.log(msg);
     return msg;
 }
 
-function logArabic(msg: string): string{
-    console.log('Now logging in arabic...');
+function logArabic(msg: string): string {
+    console.log("Now logging in arabic...");
     console.log(msg);
     return msg;
 }
 
-export class Logger{
+export class Logger {
     public logMsg: (msg: string, date?: Date, ...more: any) => string;
-    constructor(){     
-        this.logMsg = (msg: string)=> {
+    constructor() {
+        this.logMsg = (msg: string) => {
             console.log(msg);
             return msg;
-        }
-    }   
-    
-    setLogger(logger: (msg: string, date?: Date, ...more: any) => string){        
+        };
+    }
+
+    setLogger(logger: (msg: string, date?: Date, ...more: any) => string) {
         this.logMsg = logger;
     }
 }
@@ -31,14 +30,11 @@ logger.logMsg("Hello");
 logger.logMsg = (msg: string, date?: Date) => {
     console.log(msg);
     return msg;
-} 
-
-
-
+};
 
 let frLogger = new Logger();
 frLogger.setLogger((msg: string) => {
-    console.log("now logging in French")
+    console.log("now logging in French");
     return msg;
 });
 
@@ -55,8 +51,12 @@ withDate.setLogger((msg: string, date?: Date) => {
 });
 
 let logWithRest = new Logger();
-logWithRest.logMsg = (msg: string, date?: Date, count?: number, tasks?: any[]) => {
-
+logWithRest.logMsg = (
+    msg: string,
+    date?: Date,
+    count?: number,
+    tasks?: any[]
+) => {
     return msg;
 };
 
@@ -68,4 +68,3 @@ withDate.logMsg("log with date", new Date());
 logWithRest.logMsg("HELLO", new Date(), 100, ["task1", "task2"]);
 
 logWithRest.setLogger(logArabic);
-
