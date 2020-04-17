@@ -1,3 +1,8 @@
+export interface Book {
+    title: string;
+    pubDate: Date;    
+}
+
 export interface Person {
   name: string;
   email: string;
@@ -9,16 +14,9 @@ export interface Employee extends Person {
   designation: string;
 }
 
-export interface Book {
-    title: string;
-    pubDate: Date;    
-}
-
 export interface Author extends Person {
     publications: Book[]
 }
-
-
 
 export class Architect implements Employee {
     designation: string;
@@ -68,19 +66,16 @@ export function logPerson(person: Person){
     console.log(`Name: ${person.name} is ${person.occupation}, can be reached at ${person.email}`);
 }
 
+export function logEmployee(employee: Employee){
+    logPerson(employee);    
+}
+
 export function logAuthor(author: Author){
     logPerson(author);
     console.log("Books published: ");
     author.publications.forEach(book => console.log(`Title: ${book.title}, Puplished at: ${book.pubDate.toLocaleDateString()})`));
 }
 
-export function logEmployee(employee: Employee){
-    logPerson(employee);    
-}
-
-logEmployee(new Developer());
+logPerson(new Developer());
 logEmployee(new Architect());
 logAuthor(new FictionAuthor());
-
-
-console.log();
