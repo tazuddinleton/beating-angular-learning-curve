@@ -1,7 +1,13 @@
-function log(msg: string = "Default log msg"){
+
+
+// name: is required
+// msg: has a default value
+// date: is optional
+
+function greet(name: string, msg: string = "Default log msg", date?: Date){
     console.log(msg);
 }
 
-let logMsg : (msg?: string) => void = log;
+greet("Taz");
 
-logMsg()
+
