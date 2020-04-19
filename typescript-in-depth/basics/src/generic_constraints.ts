@@ -1,9 +1,9 @@
 
-export interface ShelfItem {
-    identifier: string;
+export interface IBook{
+    title: string;
 }
 
-export class Shelf<T extends ShelfItem> {
+export class Shelf<T extends IBook> {
     private _items: Map<T, T> = new Map();
 
     add(item: T): void {
@@ -19,10 +19,10 @@ export class Shelf<T extends ShelfItem> {
         return this._items.size;
     }
 
-    getBookTitles(): string[] {
-        let titles: string[] = [];
-        for (let book of this._items.values()) {
-            titles.push(book.identifier);
+    getBookTitles():string[] {
+        let titles : string[] = [];
+        for(let book of this._items.values()){
+            titles.push(book.title);
         }
         return titles;
     }
@@ -37,3 +37,5 @@ export class Shelf<T extends ShelfItem> {
 export class Book {
     constructor(public title: string, public author: string) {}
 }
+
+
