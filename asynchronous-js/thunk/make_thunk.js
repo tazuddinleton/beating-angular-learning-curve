@@ -13,11 +13,13 @@ function makeThunk(fn){
     }
 }
 
-var thunk = makeThunk(addAsync, 10, 10);
+// var thunk = makeThunk(addAsync, 10, 10);
 
-thunk(function(val){
-    console.log(val);
-});
+// thunk(function(val){
+//     console.log(val);
+// });
 
-
+module.exports = {
+    makeThunk: makeThunk
+}
 
