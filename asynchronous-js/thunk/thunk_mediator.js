@@ -1,3 +1,4 @@
+
 function fakeAjax(url, cb) {
     var fake_responses = {
         "file1": "The first text",
@@ -11,25 +12,9 @@ function fakeAjax(url, cb) {
     }, randomDelay);
 }
 
-// It's a Thunk mediator
-function getFile(filename) {
-    var response, callback;
-
-    fakeAjax(filename, function (res) {
-        if (callback) callback(res);
-        else response = res;
-    });
-
-    return function (cb) {
-        if (response) cb(response);
-        else callback = cb;
-    }
-}
-
-
-var file1 = getFile('file1');
-var file2 = getFile('file2');
-var file3 = getFile('file3');
+var file1 = getThunk(fakeAjax, 'file1');
+var file2 = getThunk(fakeAjax, 'file2');
+var file3 = getThunk(fakeAjax, 'file3');
 
 
 file1(function (content) {
@@ -49,3 +34,23 @@ file1(function (content) {
 function output(str) {
     console.log(str);
 }
+
+
+
+function getThunk(fn){
+    var response, callback;
+    var args = [].slice.call(arguments, 1);
+    args.push(function(res){
+        if (callback) callback(res);
+        else response = res;
+    });
+    fn.apply(null, args);
+    return function(cb){
+        if (response) cb(response);
+        else callback = cb;
+    }
+}
+
+
+
+
