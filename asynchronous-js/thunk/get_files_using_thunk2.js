@@ -1,3 +1,4 @@
+// Active thunking by using thunk mediator
 function fakeAjax(url, cb) {
     var fake_responses = {
         "file1": "The first text",

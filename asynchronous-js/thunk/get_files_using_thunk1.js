@@ -1,3 +1,5 @@
+// Lazy thunking
+
 var makeThunk =  require('./make_thunk').makeThunk;
 
 function fakeAjax(url, cb) {
