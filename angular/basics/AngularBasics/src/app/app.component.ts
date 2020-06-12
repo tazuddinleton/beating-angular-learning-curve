@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BaseComponent } from './shared/base.component';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,5 @@ export class AppComponent {
   constructor(){
 
   }  
+
   }

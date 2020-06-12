@@ -7,17 +7,18 @@
       >Products</a>    
 
     <a class="nav-link" 
-      [routerLink]="['/compo-comm']"
+      [routerLink]="['/components']"
       [routerLinkActive]="['link-active']"
       >Components</a>
 
-    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link" 
+      [routerLink]="['/routing']"
+      [routerLinkActive]="['link-active']"
+      >Routing</a>
     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
   </nav>
 </header>
-<div class="container-fluid" style="padding-top: 20px;">
-
-
-
+<div class="container" style="padding-top: 20px;">
+  
 <router-outlet></router-outlet>
 </div>
