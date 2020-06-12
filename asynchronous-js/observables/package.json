@@ -1,0 +1,18 @@
+{
+  "name": "observables",
+  "version": "1.0.0",
+  "description": "Practice reactive programming with rxjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine --config=jasmine.json"    
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "esm": "^3.2.25"
+  },
+  "devDependencies": {
+    "jasmine": "^3.5.0",
+    "rxjs": "^6.5.5"
+  }
+}

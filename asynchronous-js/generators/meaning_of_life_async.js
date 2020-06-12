@@ -2,7 +2,7 @@ const { Sequence, print } = require('./sequence');
 
 function getData(data) {
     return setTimeout(() => {
-        seq.next(data);
+        seq.next(data);``
     }, 1000);
 }
 

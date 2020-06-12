@@ -5,19 +5,19 @@ function* main(){
     yield 'hello';
 }
 
-function *range(start, end){    
-    while(start != end){
-        yield start++;
-    }
-}
+// function *range(start, end){    
+//     while(start != end){
+//         yield start++;
+//     }
+// }
 
 for(let i of main()){
     print(i);
 }
 
-for(let i of range(0, 10)){
-    print(i);
-}
+// for(let i of range(0, 10)){
+//     print(i);
+// }
 
 
 
