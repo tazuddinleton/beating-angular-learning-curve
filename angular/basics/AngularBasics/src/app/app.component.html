@@ -1,1 +1,23 @@
-<h3>Hell world!</h3>
+<header>
+  <nav class="nav">    
+    
+    <a class="nav-link" 
+      [routerLink]="['/products']"
+      [routerLinkActive]="['link-active']"
+      >Products</a>    
+
+    <a class="nav-link" 
+      [routerLink]="['/compo-comm']"
+      [routerLinkActive]="['link-active']"
+      >Comp-comm</a>
+
+    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  </nav>
+</header>
+<div class="container-fluid" style="padding-top: 20px;">
+
+
+
+<router-outlet></router-outlet>
+</div>
