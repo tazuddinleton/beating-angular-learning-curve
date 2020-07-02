@@ -3,21 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
-import { FormsModule} from '@angular/forms'
-import { ConvertToSpacePipe } from './shared/convert-to-space.pipe';
-import { StarComponent } from './shared/star.component';
 
 import { RouterModule } from '@angular/router';
 import { ComponentsModule } from './components/components.module';
 import { RoutingModule } from './routing/routing.module';
 import { SharedModule } from './shared/shared.module';
+import { DiModule } from './dependency-injection/di.module';
 
 @NgModule({
   imports: [
     BrowserModule,
-    SharedModule,    
+    SharedModule,
     ComponentsModule,
     RoutingModule,
+    DiModule,
     RouterModule.forRoot([
       {path: 'products', component: ProductListComponent},
       {path: '', component: ProductListComponent}
@@ -26,9 +25,9 @@ import { SharedModule } from './shared/shared.module';
 
   declarations: [
     AppComponent,
-    ProductListComponent        
+    ProductListComponent
   ],
-  
+
   providers: [],
   bootstrap: [AppComponent]
 })

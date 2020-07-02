@@ -8,7 +8,10 @@ import { ProductService } from './product.service';
 
 @Component({    
     templateUrl: './product-list.component.html',
-    styles: ["thead{color: teal;}"]
+    styles: ["thead{color: teal;}"],
+    providers: [
+        
+    ]
     
 })
 export class ProductListComponent implements OnInit, AfterViewInit {

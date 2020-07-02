@@ -1,24 +1,27 @@
 <header>
-  <nav class="nav">    
-    
-    <a class="nav-link" 
+  <nav class="nav">
+
+    <a class="nav-link"
       [routerLink]="['/products']"
       [routerLinkActive]="['link-active']"
-      >Products</a>    
+      >Products</a>
 
-    <a class="nav-link" 
+    <a class="nav-link"
       [routerLink]="['/components']"
       [routerLinkActive]="['link-active']"
       >Components</a>
 
-    <a class="nav-link" 
+    <a class="nav-link"
       [routerLink]="['/routing']"
       [routerLinkActive]="['link-active']"
       >Routing</a>
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+    <a class="nav-link"
+      [routerLink]="['/di']"
+      [routerLinkActive]="['link-active']"
+     >Dependency Injection</a>
   </nav>
 </header>
 <div class="container" style="padding-top: 20px;">
-  
+
 <router-outlet></router-outlet>
 </div>
