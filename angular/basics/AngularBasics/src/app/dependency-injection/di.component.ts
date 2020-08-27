@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { IJsStringService, JS_STRING_SVC } from './my-js-string-service';
+import { LoggerService } from './logger.service';
 
 @Component({
   template: `
@@ -18,9 +19,12 @@ export class DiComponent {
   buttonText: string = "Reverse Me";
   constructor(
     @Inject(JS_STRING_SVC)
-    private jsStringSvc: IJsStringService){
+    private jsStringSvc: IJsStringService,
+    private loggerService: LoggerService
 
-      console.log(jsStringSvc);
+    ){
+
+      loggerService.log('Log this message.');
   }
 
   reverseButtonText(){

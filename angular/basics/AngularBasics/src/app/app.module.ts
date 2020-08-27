@@ -9,6 +9,8 @@ import { ComponentsModule } from './components/components.module';
 import { RoutingModule } from './routing/routing.module';
 import { SharedModule } from './shared/shared.module';
 import { DiModule } from './dependency-injection/di.module';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [

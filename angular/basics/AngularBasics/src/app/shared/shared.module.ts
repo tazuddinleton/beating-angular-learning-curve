@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BaseComponent } from './base.component';
@@ -28,7 +28,9 @@ import { ConvertToSpacePipe } from './convert-to-space.pipe';
     ]
 })
 export class SharedModule {
-    
+  constructor(@Optional() @SkipSelf() parentModule: SharedModule){
+    throwErrorIfAlreadyLoaded(parentModule, 'SharedModule');
+  }
 }
 
 export function
@@ -38,4 +40,10 @@ canRouteDeactivate(component: BaseComponent){
   }else{
     return true;
   }
+}
+
+export function throwErrorIfAlreadyLoaded(parentModule: any, moduleName: string){
+    if(parentModule){
+      throw Error(`The module is already loaded. Load ${moduleName} only in app component.`);
+    }
 }

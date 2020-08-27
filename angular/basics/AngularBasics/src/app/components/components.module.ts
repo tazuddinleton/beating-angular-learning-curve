@@ -11,12 +11,10 @@ import { ComponentModuleLandingComponent } from './components/module-landing/com
 
 @NgModule({
     imports: [
-        FormsModule,
-        CommonModule,                
         RouterModule.forChild([
             {path: 'components', component: ComponentModuleLandingComponent},
             {path: 'compo-comm', component: ParentComponent}
-        ])        
+        ])
     ],
     declarations: [
         ParentComponent,
