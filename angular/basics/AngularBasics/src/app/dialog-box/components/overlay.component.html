@@ -1,0 +1,8 @@
+<div>
+  <ng-template appMoalContent></ng-template>
+  <button #closeButton *ngIf="showCloseButton"
+    (click)="closeModal($event)" class="close-button"
+  >
+  <span aria-hidden="true">X</span>
+  </button>
+</div>
