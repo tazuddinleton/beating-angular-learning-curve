@@ -12,6 +12,7 @@ import { DiModule } from './dependency-injection/di.module';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CustomElementModule } from './custom-elements/custom-element.module';
+import { DirectivesModule } from './directives/directives.module';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { CustomElementModule } from './custom-elements/custom-element.module';
     RoutingModule,
     DiModule,
     CustomElementModule,
+    DirectivesModule,
     RouterModule.forRoot([
       {path: 'products', component: ProductListComponent},
       {path: '', component: ProductListComponent}
