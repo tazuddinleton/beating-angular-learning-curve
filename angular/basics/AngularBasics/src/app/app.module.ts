@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CustomElementModule } from './custom-elements/custom-element.module';
 import { DirectivesModule } from './directives/directives.module';
+import {BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { DirectivesModule } from './directives/directives.module';
     DiModule,
     CustomElementModule,
     DirectivesModule,
+    BsDatepickerModule.forRoot(),
     RouterModule.forRoot([
       {path: 'products', component: ProductListComponent},
       {path: '', component: ProductListComponent}

@@ -15,7 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     RouterModule.forChild([
 
-      {path: 'ce', component: CustomElementLandingComponent}
+      {path: 'ce', component: CustomElementLandingComponent},
     ])
   ],
 

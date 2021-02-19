@@ -1,30 +1,34 @@
 
 
-<div class="card" > 
+<div class="card" >
   <div class="card-header">
     <h5 class="card-title">{{pageTitle}}</h5>
 </div>
-<div class="card-body">  
+<div class="card-body">
   <div class="row">
     <div class="col-md-auto col-sm-4  mb-1">
-      <button 
+      <button
       style="width: 100%;"
       (click)="toggleImage()"
       class="btn btn-sm btn-primary ">{{showImage ? 'Hide Image' : 'Show Image'}}</button>
     </div>
-  
+
+    <div class="col-md-auto col-sm-4  mb-1">
+      <input type="text" placeholder="Date picker" bsDatepicker/>
+    </div>
+
     <div class="col-md-auto col-sm-4  mb-1" *ngIf="products.length">
-      <input type="text" 
+      <input type="text"
       [(ngModel)]="listFilter"
-      style="padding:4px; height:28px; width: 100%;" 
-      placeholder="Filter" 
-      #filterInputElemRef      
+      style="padding:4px; height:28px; width: 100%;"
+      placeholder="Filter"
+      #filterInputElemRef
       />
     </div>
 
     <div class="col-md-9 col-sm-4  mb-1">
-      <a style="margin-top: 0;" 
-      [routerLink]="['/products', 0, 'edit']" 
+      <a style="margin-top: 0;"
+      [routerLink]="['/products', 0, 'edit']"
       class="btn btn-primary btn-sm float-right">Add Product</a>
     </div>
   </div>
@@ -54,9 +58,9 @@
     <tbody>
       <tr *ngFor="let product of filteredProducts">
           <td>
-            <img 
+            <img
               *ngIf="showImage"
-              [src]="product.image" 
+              [src]="product.image"
                 [title]="product.productName"
                 [style.margin.px]="2"
                 [style.width.px]="50"
@@ -68,22 +72,22 @@
         <td>{{product.category}}</td>
         <td>{{ product.description }}</td>
         <td>{{ product.unitPrice | currency: 'BDT':'symbol':'1.2-2' | lowercase}}</td>
-        <td>          
-          <app-star 
+        <td>
+          <app-star
             [rating]="product.starRating"
             (notify)="onRatingClicked($event)"
             ></app-star>
         </td>
         <td>
           <a [routerLink]="['/products', product.productId, 'edit']" style="font-size: 15px; color: dodgerblue;">
-            <i class="fa fa-edit"></i>            
+            <i class="fa fa-edit"></i>
           </a>
         </td>
       </tr>
     </tbody>
-  </table>  
+  </table>
  </div>
-  
+
 
 </div>
 

@@ -3,6 +3,7 @@
 
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.min.css";
+@import "~ngx-bootstrap/datepicker/bs-datepicker.css";
 
 body{
     padding: 10px;
