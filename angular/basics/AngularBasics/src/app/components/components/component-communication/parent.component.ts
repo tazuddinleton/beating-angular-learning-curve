@@ -4,13 +4,14 @@ import { ProductService } from '../../../products/product.service';
 @Component({
   template: `
 
+  HELLO
   <div class="row" *ngIf="products.length" >
     <div class="col-md-4"  *ngFor="let product of products" style="margin-bottom: 5px">
     <app-child  [product]="product"  (onGreet)="handleGreeting($event)"></app-child>
     </div>
   </div>
-  
-  `  
+
+  `
 })
 export class ParentComponent implements OnInit{
 
@@ -19,7 +20,13 @@ export class ParentComponent implements OnInit{
 
   }
   ngOnInit(): void {
-    this.productService.getAllProducts().subscribe(data => this.products = data)
+    this.productService.getAllProducts()
+    .subscribe(data => {
+      this.products = data;
+      console.log(this.products);
+    });
+    console.log('Parent component');
+
   }
 
 

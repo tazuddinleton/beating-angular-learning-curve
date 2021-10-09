@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "noImplicitAny": false,
+        "sourceMap": true,        
+        "outDir": "build",
+        "esModuleInterop": true,
+        "downlevelIteration": true,
+        "strict": true,
+        "lib": ["es2018", "DOM"],
+        "experimentalDecorators": true
+    }  
+    
+}

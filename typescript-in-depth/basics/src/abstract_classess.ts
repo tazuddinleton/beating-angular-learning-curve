@@ -1,3 +1,11 @@
+
+import {IVehicleState} from './class_expressions';
+
+import express, {Application, Request, Response, NextFunction} from 'express';
+
+const app = express();
+
+
 export abstract class Person {
     abstract name: string;
     abstract email: string;

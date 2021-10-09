@@ -5,6 +5,7 @@ import { ParentComponent } from './components/component-communication/parent.com
 import { RouterModule } from '@angular/router';
 import { ChildComponent } from './components/component-communication/child.component';
 import { ComponentModuleLandingComponent } from './components/module-landing/component.module.landing';
+import { ContentProjectionComponent } from './content-projection/content-projection.component';
 
 
 
@@ -19,7 +20,8 @@ import { ComponentModuleLandingComponent } from './components/module-landing/com
     declarations: [
         ParentComponent,
         ChildComponent,
-        ComponentModuleLandingComponent
+        ComponentModuleLandingComponent,
+        ContentProjectionComponent
     ],
 
 })
